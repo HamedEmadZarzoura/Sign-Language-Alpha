@@ -6,13 +6,14 @@ Created on Thu Feb 29 20:48:09 2024
 """
 
 
+import os
 import pickle
 
 import cv2
 import mediapipe as mp
 import numpy as np
 
-model_dict = pickle.load(open('C:\\Users\\hamed\\Desktop\\data\\model.p', 'rb'))
+model_dict = pickle.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'model.p'), 'rb'))
 model = model_dict['model']
 
 cap = cv2.VideoCapture(0)
